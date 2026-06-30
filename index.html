@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jay Tai — Software Engineer & Developer Portfolio" />
+  <title>Jay Tai — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">JT</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-inner">
+      <span class="hero-tag">Hello, world.</span>
+      <h1 class="hero-name">Jay Tai</h1>
+      <h2 class="hero-role"><span id="typewriter"></span><span class="blink-cursor">_</span></h2>
+      <p class="hero-desc">I craft clean, performant digital experiences — from concept to deployment.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">See My Work</a>
+        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+    <div class="scroll-hint" id="scrollHint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-num">01.</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-text reveal">
+          <p>I'm a developer who enjoys building things that live on the internet. I care deeply about performance, accessibility, and the small details that make a product feel polished.</p>
+          <p>My background spans frontend development, backend systems, and everything in between. I'm always learning — currently exploring machine learning and systems programming.</p>
+          <p>Outside of code, I enjoy gaming, trying new food spots, and hunting for the perfect cup of coffee.</p>
+        </div>
+        <div class="about-side reveal">
+          <div class="avatar-box">
+            <div class="avatar-inner"><span class="avatar-initials">JT</span></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item">
+              <div class="stat-number-wrap">
+                <span class="stat-val" data-target="15">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-key">Projects</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number-wrap">
+                <span class="stat-val" data-target="3">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-key">Years Exp.</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number-wrap">
+                <span class="stat-val" data-target="10">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-key">Technologies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-num">02.</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">A selection of things I've built — including a few you can play with.</p>
+      </div>
+      <div class="filter-bar reveal">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="interactive">Interactive</button>
+        <button class="filter" data-filter="web">Web</button>
+        <button class="filter" data-filter="tools">Tools</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ── Skills ── -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-num">03.</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-layout" id="skillsLayout"></div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact" class="section section-alt">
+    <div class="container container-narrow">
+      <div class="section-header reveal center">
+        <span class="section-num">04.</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-intro">Have a project in mind, want to collaborate, or just want to say hi? My inbox is always open.</p>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" name="name" id="fname" placeholder=" " required />
+            <label for="fname">Name</label>
+          </div>
+          <div class="form-field">
+            <input type="email" name="email" id="femail" placeholder=" " required />
+            <label for="femail">Email</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <input type="text" name="subject" id="fsubject" placeholder=" " />
+          <label for="fsubject">Subject</label>
+        </div>
+        <div class="form-field">
+          <textarea name="message" id="fmessage" rows="5" placeholder=" " required></textarea>
+          <label for="fmessage">Message</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-wide">Send Message →</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+      <div class="social-bar reveal">
+        <a href="https://github.com/jaytai3336" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="#" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:jaytai3336@gmail.com" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>Designed &amp; built by <strong>Jay Tai</strong></p>
+    <p class="footer-sub">© 2026 · <a href="https://github.com/jaytai3336/jaytai3336.github.io" target="_blank" rel="noopener noreferrer">View Source</a></p>
+  </footer>
+
+  <!-- ── Modal ── -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal-box" id="modalBox" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="modalInner"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
