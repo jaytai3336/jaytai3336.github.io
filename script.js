@@ -225,6 +225,7 @@ function randn() {
 document.addEventListener('DOMContentLoaded', () => {
   initChartBg();
   initTicker();
+  initHeroTags();
   initTypewriter();
   initNavbar();
   initScrollReveal();
@@ -238,6 +239,48 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   initCardGlow();
 });
+
+// ── Hero Tags Strip ───────────────────────
+
+function initHeroTags() {
+  const inner = document.getElementById('heroTagsInner');
+  if (!inner) return;
+
+  const TAGS = [
+    { label: 'Python',           color: 'green'  },
+    { label: 'Stochastic Calc',  color: 'cyan'   },
+    { label: 'PyTorch',          color: 'green'  },
+    { label: 'Black-Scholes',    color: 'cyan'   },
+    { label: 'FinBERT',          color: 'amber'  },
+    { label: 'QuantLib',         color: 'purple' },
+    { label: 'NumPy · Pandas',   color: 'green'  },
+    { label: 'Monte Carlo',      color: 'cyan'   },
+    { label: 'RoBERTa',          color: 'amber'  },
+    { label: 'GARCH',            color: 'cyan'   },
+    { label: 'scikit-learn',     color: 'green'  },
+    { label: 'Bloomberg',        color: 'purple' },
+    { label: 'LSTM',             color: 'amber'  },
+    { label: 'Options Pricing',  color: 'cyan'   },
+    { label: 'VAE',              color: 'amber'  },
+    { label: 'statsmodels',      color: 'green'  },
+    { label: 'Portfolio Theory', color: 'cyan'   },
+    { label: 'SQL · R',          color: 'purple' },
+    { label: 'spaCy · NLTK',     color: 'amber'  },
+    { label: 'Delta Hedging',    color: 'cyan'   },
+    { label: 'Git · Selenium',   color: 'purple' },
+    { label: 'Realized Vol',     color: 'cyan'   },
+    { label: 'Transformer',      color: 'amber'  },
+    { label: 'SciPy',            color: 'green'  },
+    { label: 'LDA',              color: 'amber'  },
+    { label: 'Backtrader',       color: 'purple' },
+  ];
+
+  // Double for seamless loop
+  const all = [...TAGS, ...TAGS];
+  inner.innerHTML = all.map(t =>
+    `<span class="h-tag ${t.color}"><span class="h-tag-dot"></span>${t.label}</span>`
+  ).join('');
+}
 
 // ── Animated Chart Background ─────────────
 
