@@ -95,12 +95,54 @@ const PROJECTS = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`,
   },
   {
+    id: 'backtesting-lstm',
+    title: 'LSTM vs ARIMA-GARCH Backtesting',
+    desc: 'Rigorous comparative study of LSTM and ARIMA-GARCH models for E-mini S&P 500 futures price prediction. LSTM MAPE 0.18% but directional accuracy below 50% — a clean EMH validation.',
+    tags: ['LSTM', 'ARIMA', 'GARCH', 'Python'],
+    categories: ['quant'],
+    page: 'https://jaytai3336.github.io/BacktestingLSTM/',
+    github: 'https://github.com/jaytai3336/BacktestingLSTM',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+  },
+  {
     id: 'bert-nlp',
-    title: 'BERT Sentiment Signal Pipeline',
-    desc: 'Real-time NLP pipeline processing 10,000+ daily financial news articles. BERT-based model at 89% accuracy on financial corpora, integrated into portfolio construction for risk-adjusted alpha enhancement.',
+    title: 'NLP Sentiment Signal Pipeline',
+    desc: 'End-to-end pipeline scraping Bloomberg & social media to generate SPY signals. BERT-based model at 89% accuracy; comparison across VADER, SVM, FinBERT, RoBERTa, and LSTM (77% best).',
     tags: ['BERT', 'Python', 'Transformers', 'NLP'],
     categories: ['ml'],
+    page: 'https://jaytai3336.github.io/Sentimental-Analysis/',
+    github: 'https://github.com/jaytai3336/Sentimental-Analysis',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+  },
+  {
+    id: 'vae-pricing',
+    title: 'Volatility Surface Pricing via VAE',
+    desc: 'Generative deep learning approach to options pricing — VAE learns the latent structure of implied vol surfaces for arbitrage-free interpolation at <strong>1000× the speed</strong> of QuantLib. R² > 0.95.',
+    tags: ['VAE', 'PyTorch', 'Options Pricing', 'Python'],
+    categories: ['quant'],
+    page: 'https://jaytai3336.github.io/VAE_pricing/',
+    github: 'https://github.com/jaytai3336/VAE_pricing',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2 L22 22 M2 22 L22 2"/><circle cx="12" cy="12" r="9"/></svg>`,
+  },
+  {
+    id: 'heart-disease',
+    title: 'Heart Disease Classification',
+    desc: 'Systematic benchmark of 8 supervised classifiers on the UCI Cleveland dataset — Logistic Regression through KNN and Random Forest. Best: KNN with <strong>AUC 0.953</strong> on 303 patient records.',
+    tags: ['scikit-learn', 'Python', 'Classification', 'Healthcare ML'],
+    categories: ['ml'],
+    page: 'https://jaytai3336.github.io/Heart-Disease-Prediction-Using-Supervised-Classification-Models/',
+    github: 'https://github.com/jaytai3336/Heart-Disease-Prediction-Using-Supervised-Classification-Models',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  },
+  {
+    id: 'hdb-resale',
+    title: 'HDB Resale Price Prediction',
+    desc: 'OLS linear regression model on Singapore HDB resale transactions — Adj. R² of <strong>0.8162</strong>. Interactive price estimator with floor area, storey, lease, flat type, and location inputs.',
+    tags: ['statsmodels', 'Python', 'Regression', 'Singapore'],
+    categories: ['ml', 'research'],
+    page: 'https://jaytai3336.github.io/Predicting-HDB-Resale-Prices-in-Singapore-A-Linear-Regression-Approach/',
+    github: 'https://github.com/jaytai3336/Predicting-HDB-Resale-Prices-in-Singapore-A-Linear-Regression-Approach',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
   },
   {
     id: 'kyc-agent',
@@ -117,6 +159,16 @@ const PROJECTS = [
     tags: ['DCF', 'Monte Carlo', 'Equity Research', 'Excel'],
     categories: ['research'],
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
+  },
+  {
+    id: 'nush-math',
+    title: 'Trigonometric Inequality Research',
+    desc: 'Pure mathematics research producing two peer-reviewed publications — "Some Functional Upper Bounds for Fejér\'s Sine Polynomial" (Q1) and "A Sharp Trigonometric Double Inequality" (Q2), both published 2021.',
+    tags: ['Research', 'Mathematics', 'Analysis', 'Publications'],
+    categories: ['research'],
+    page: 'https://jaytai3336.github.io/NUSH-Math-Research/',
+    github: 'https://github.com/jaytai3336/NUSH-Math-Research',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
   },
   {
     id: 'vol-research',
@@ -533,7 +585,11 @@ function createProjectCard(p, i) {
   const ghLink = p.github ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" title="GitHub">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
   </a>` : '';
-  const badge = p.demo ? `<span class="interactive-badge">✦ live demo</span>` : '';
+  const badge = p.demo ? `<span class="interactive-badge">✦ live demo</span>` : (p.page ? `<span class="interactive-badge">✦ live page</span>` : '');
+
+  const actions = [];
+  if (p.demo) actions.push(`<button class="card-btn card-btn-demo" data-demo="${p.demo}">Launch Demo →</button>`);
+  if (p.page) actions.push(`<a href="${p.page}" target="_blank" rel="noopener noreferrer" class="card-btn card-btn-page">View Page →</a>`);
 
   div.innerHTML = `
     <div class="card-top">
@@ -543,7 +599,7 @@ function createProjectCard(p, i) {
     <h3 class="card-title">${p.title}</h3>
     <p class="card-desc">${p.desc}</p>
     <div class="card-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-    ${p.demo ? `<div class="card-actions"><button class="card-btn card-btn-demo" data-demo="${p.demo}">Launch Demo →</button></div>` : ''}
+    ${actions.length ? `<div class="card-actions">${actions.join('')}</div>` : ''}
   `;
   if (p.demo) div.querySelector('.card-btn-demo').addEventListener('click', () => openDemo(p.demo, p.title));
   return div;
