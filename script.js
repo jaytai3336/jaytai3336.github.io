@@ -275,6 +275,7 @@ function randn() {
 // ── Init ──────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initChartBg();
   initTicker();
   initHeroTags();
@@ -291,6 +292,24 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   initCardGlow();
 });
+
+// ── Theme Toggle ──────────────────────────
+
+function initTheme() {
+  const saved = localStorage.getItem('theme') || 'dark';
+  document.documentElement.dataset.theme = saved;
+
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.classList.add('theme-switching');
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+    setTimeout(() => document.documentElement.classList.remove('theme-switching'), 300);
+  });
+}
 
 // ── Hero Tags Strip ───────────────────────
 
